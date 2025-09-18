@@ -1,0 +1,21 @@
+#PBS -N fmriprep
+#PBS -l nodes=1:ppn=30
+#PBS -l walltime=48:00:00
+#PBS -l mem=256gb
+#PBS -q workq
+#PBS -o fmriprep_reconall.log
+#PBS -e fmriprep_reconall.error
+
+proj_top=/SINLAB/SIN/qi/qi/Closedloop # Update to your directory
+work_dir=${proj_top}/fmriprep_wd
+ncpu=30
+mem_mb=256000
+
+singularity run --cleanenv -B ${proj_top}:${proj_top} /SINLAB/SIN/fmriprep/fmriprep-23-2-1.simg \
+${proj_top}/BIDS ${proj_top}/derivatives participant --participant-label 06 \
+	--fs-license-file ${proj_top}/Freesurfer/license.txt \
+	--output-spaces fsnative MNI152NLin2009cAsym\
+	--mem_mb $mem_mb \
+	--n_cpus $ncpu \
+	-w ${work_dir} \
+	--derivatives ${proj_top}/derivatives
