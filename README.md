@@ -2,10 +2,15 @@
 This is just how I organize my project and is intended to serve as an example rather than strict guildelines. 
 
 ./behav_data: this is usually where I keep the behavioral data and stimuli timings (i.e., the output from your presentation script)
+
 ./BIDS: this is where the raw fmri data is. I use the BIDS format (https://bids.neuroimaging.io/index.html)
+
 ./derivatives: the preprocessed output of fMRIprep
+
 ./Scripts: I keep all the analysis scripts including preprocessing here. 
+
 ./results
+
 ./figures
 
 # Preprocessing
