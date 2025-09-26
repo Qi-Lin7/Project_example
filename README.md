@@ -25,7 +25,9 @@ I've included example scripts for running basic preprocessing on the CNIR cluste
 ```
 qsub 3submit_fmriprep_w_reconall.pbs
 ```
+# BIDS structure example
 
+<img width="395" height="465" alt="image" src="https://github.com/user-attachments/assets/51ffe413-eb37-4282-8776-ff64d5a1923b" />
 
 
 
